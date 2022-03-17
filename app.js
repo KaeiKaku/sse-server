@@ -4,11 +4,11 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+app.use(cors());
+
 run().catch((err) => console.log(err));
 
 async function run() {
-  app.use(cors());
-
   app.get("/sse", async function (req, res) {
     res.set({
       "Cache-Control": "no-cache",
